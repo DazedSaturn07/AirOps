@@ -1,0 +1,24 @@
+{
+  "source_name": "US DOT 2015 Flight Delays and Cancellations",
+  "source_url": "https://www.kaggle.com/datasets/usdot/flight-delays",
+  "retrieved_at_utc": "2026-09-21T09:03:08.729245+00:00",
+  "files": [
+    {
+      "name": "airlines.csv",
+      "bytes": 359,
+      "sha256": "ec54f453260c2a46fc76d497ab0eb0a4c13724b566fba8a7ce3bb8ad712acca3"
+    },
+    {
+      "name": "airports.csv",
+      "bytes": 23867,
+      "sha256": "23c4cea98c318225bd923b2068ead8af089845071f79fd9ea0037ba6a61cd4e2"
+    },
+    {
+      "name": "flights.csv",
+      "bytes": 592406591,
+      "sha256": "afa4e42188b113dd69427a3fbd00a4b6979c6235c866f963c2899d18a3403a83"
+    }
+  ],
+  "license_or_terms_url": "https://www.kaggle.com/datasets/usdot/flight-delays",
+  "notes": "Raw files were supplied in the initial workspace and remain immutable."
+}

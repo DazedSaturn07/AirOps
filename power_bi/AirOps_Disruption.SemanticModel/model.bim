@@ -1,0 +1,1298 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"ProjectFolder\", \"fact_flight\", \"Airline\", \"Calendar\", \"DelayCause\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Entities": {
+              "airline.airline_code": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Airline",
+                    "ConceptualProperty": "airline_code"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Carrier": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.airline_code": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "airline_code"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Carrier": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.airline_minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Airline Minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Airline": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.arrival_delay_minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "arrival_delay_minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Arrival delay (min)": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.arrived_flights": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Arrived Flights"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Eligible arrivals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.average_arrival_delay_minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Average Arrival Delay Minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Mean eligible delay (min)": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.cancellation_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Cancellation %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Cancellation rate": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Cancelled": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.cancelled": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "cancelled"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Cancelled": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.cancelled_flights": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Cancelled Flights"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Cancelled observations": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.delay_15_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Delay >15 %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Late >15m": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Arrivals >15 minutes late": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.destination_airport_code": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "destination_airport_code"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Destination": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.diverted": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "diverted"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Diverted": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.flight_date": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "flight_date"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Date": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.flight_number": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "flight_number"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Flight": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.flights": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Flights"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Scheduled observations": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.late_aircraft_minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Late Aircraft Minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Late-aircraft minutes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Late aircraft": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.late_aircraft_share_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Late Aircraft Share %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Late-aircraft share of attribution": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.numeric_airport_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Numeric Airport %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Unresolved share of records": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.numeric_airport_rows": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Numeric Airport Rows"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Unresolved airport-ID rows": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.ontime_arrival_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "On-Time Arrival %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Arrivals within 15 minutes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Within 15m": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Within 15 minutes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.recorded_cause_minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Recorded Cause Minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Total": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Recorded attributed minutes": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.route_code": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "route_code"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Source route": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Route": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.route_context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Route Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Active route context": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.severe_delay_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Severe Delay %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Severe arrival delay >60m": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Severe >60m": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.source_row_number": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "source_row_number"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Source row": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "fact_flight.weather_minutes": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "fact_flight",
+                    "ConceptualProperty": "Weather Minutes"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Weather": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "ProjectFolder",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:/path/to/AirOps\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "74c89fb7-1128-4540-b06f-14ee39e04682"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "02a828fa84925e17905e",
+        "fromColumn": "airline_code",
+        "fromTable": "fact_flight",
+        "toColumn": "airline_code",
+        "toTable": "Airline"
+      },
+      {
+        "name": "0f70fc065346505faec0",
+        "fromColumn": "flight_date",
+        "fromTable": "fact_flight",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "fact_flight",
+        "columns": [
+          {
+            "name": "source_row_number",
+            "dataType": "int64",
+            "lineageTag": "f61ca41e-b3a2-483f-941b-6eea68b6197c",
+            "sourceColumn": "source_row_number",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "flight_date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "1fac17fa-331d-4f60-b21d-e42511b0f2a7",
+            "sourceColumn": "flight_date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "airline_code",
+            "dataType": "string",
+            "lineageTag": "54b4ab2a-b209-49b5-86cc-067dca62718f",
+            "sourceColumn": "airline_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "flight_number",
+            "dataType": "string",
+            "lineageTag": "e0f44b78-2fc3-4f30-94b6-d2f295fba401",
+            "sourceColumn": "flight_number",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "tail_number",
+            "dataType": "string",
+            "lineageTag": "00152b08-5fac-4360-ba5f-9743747bb46f",
+            "sourceColumn": "tail_number",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "origin_airport_code",
+            "dataType": "string",
+            "lineageTag": "e3caa316-95ee-4055-8c61-54fa7ab9e0c7",
+            "sourceColumn": "origin_airport_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "destination_airport_code",
+            "dataType": "string",
+            "lineageTag": "747ec2f7-7bd8-4bd8-bb65-d5858c8bf2ac",
+            "sourceColumn": "destination_airport_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "scheduled_departure_hhmm",
+            "dataType": "string",
+            "lineageTag": "01c55423-414e-43f5-adcd-51efaa3807d3",
+            "sourceColumn": "scheduled_departure_hhmm",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "arrival_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "661f7583-c36f-4ec5-adcc-71f731f62975",
+            "sourceColumn": "arrival_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "departure_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "940e924d-4635-49c8-8cce-0b18ebca0643",
+            "sourceColumn": "departure_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cancelled",
+            "dataType": "int64",
+            "lineageTag": "12e92a09-3653-4a66-8ddf-109fe4c2e7af",
+            "sourceColumn": "cancelled",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "diverted",
+            "dataType": "int64",
+            "lineageTag": "7bcee562-dad7-414b-9048-726912bab0a0",
+            "sourceColumn": "diverted",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "cancellation_reason_code",
+            "dataType": "string",
+            "lineageTag": "410f140a-62a8-4543-bfa8-0eb062efb059",
+            "sourceColumn": "cancellation_reason_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "air_system_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "5508a54a-9163-46e4-8597-d8fccd0dc8fc",
+            "sourceColumn": "air_system_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "security_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "d2ff6543-d38d-48f0-bc0c-958a786ed4cd",
+            "sourceColumn": "security_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "airline_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "17948ebb-a5bb-478d-bc05-85401877365a",
+            "sourceColumn": "airline_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "late_aircraft_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "268f6532-4122-4aaa-87a5-e7895fbde427",
+            "sourceColumn": "late_aircraft_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "weather_delay_minutes",
+            "dataType": "double",
+            "lineageTag": "11d0303a-1c55-47d5-a384-e979b276161c",
+            "sourceColumn": "weather_delay_minutes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "route_code",
+            "dataType": "string",
+            "lineageTag": "b9cc9d88-0104-4903-9df6-19cff5e9b43f",
+            "sourceColumn": "route_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "departure_hour",
+            "dataType": "int64",
+            "lineageTag": "6e43053d-9f9c-4e5e-8136-12bc25d49bb4",
+            "sourceColumn": "departure_hour",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "peak_period",
+            "dataType": "int64",
+            "lineageTag": "18bec367-b376-49b2-be66-2b88aec59d94",
+            "sourceColumn": "peak_period",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "delay_bucket",
+            "dataType": "string",
+            "lineageTag": "ddb7ed6e-81d2-4c4d-a8d4-218dde8da670",
+            "sourceColumn": "delay_bucket",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Airport code type",
+            "dataType": "string",
+            "lineageTag": "b2a16e8b-4752-4708-868c-749db1505290",
+            "sourceColumn": "Airport code type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Departure period",
+            "dataType": "string",
+            "lineageTag": "43bf1b2b-3bf0-4542-b5d5-a379b6dcb2da",
+            "sourceColumn": "Departure period",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b8d4743e-63ad-45f0-9082-bfbddaef42db",
+        "measures": [
+          {
+            "name": "Flights",
+            "displayFolder": "Operations",
+            "expression": "COALESCE(COUNTROWS(fact_flight), 0)",
+            "formatString": "#,##0",
+            "lineageTag": "77382619-0568-45b5-b860-9c69b98ea60e"
+          },
+          {
+            "name": "Cancelled Flights",
+            "displayFolder": "Operations",
+            "expression": [
+              "CALCULATE(",
+              "    [Flights], KEEPFILTERS(fact_flight[cancelled] = 1)",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "53ccd0f7-0920-49c6-b28a-ab4d86c2da30"
+          },
+          {
+            "name": "Diverted Flights",
+            "displayFolder": "Operations",
+            "expression": [
+              "CALCULATE(",
+              "    [Flights], KEEPFILTERS(fact_flight[diverted] = 1)",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "6cf1d766-ac5e-4c8d-b852-94cb85858c7a"
+          },
+          {
+            "name": "Arrived Flights",
+            "displayFolder": "Operations",
+            "expression": [
+              "CALCULATE(",
+              "    [Flights],",
+              "    KEEPFILTERS(fact_flight[cancelled] = 0),",
+              "    KEEPFILTERS(fact_flight[diverted] = 0),",
+              "    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes]))",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "11cfd3e0-cae3-43a6-a4dc-9263a8f1728c"
+          },
+          {
+            "name": "On-Time Arrivals",
+            "displayFolder": "Arrival performance",
+            "expression": [
+              "CALCULATE(",
+              "    [Flights],",
+              "    KEEPFILTERS(fact_flight[cancelled] = 0),",
+              "    KEEPFILTERS(fact_flight[diverted] = 0),",
+              "    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes])),",
+              "    KEEPFILTERS(fact_flight[arrival_delay_minutes] <= 15)",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "6bc1a98b-3ae8-4eba-8656-877a92882d49"
+          },
+          {
+            "name": "Delay >15 Flights",
+            "displayFolder": "Arrival performance",
+            "expression": [
+              "CALCULATE(",
+              "    [Flights],",
+              "    KEEPFILTERS(fact_flight[cancelled] = 0),",
+              "    KEEPFILTERS(fact_flight[diverted] = 0),",
+              "    KEEPFILTERS(fact_flight[arrival_delay_minutes] > 15)",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "2fb0f86e-a690-43e6-8deb-494c09e72840"
+          },
+          {
+            "name": "Severe Delay Flights",
+            "displayFolder": "Arrival performance",
+            "expression": [
+              "CALCULATE(",
+              "    [Flights],",
+              "    KEEPFILTERS(fact_flight[cancelled] = 0),",
+              "    KEEPFILTERS(fact_flight[diverted] = 0),",
+              "    KEEPFILTERS(fact_flight[arrival_delay_minutes] > 60)",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "5baefe46-663c-4ec1-ab97-5dde4d08fa6a"
+          },
+          {
+            "name": "On-Time Arrival %",
+            "displayFolder": "Arrival performance",
+            "expression": "DIVIDE([On-Time Arrivals], [Arrived Flights])",
+            "formatString": "0.00%",
+            "lineageTag": "52cab213-06fa-477b-b781-195f2b9384f3"
+          },
+          {
+            "name": "Delay >15 %",
+            "displayFolder": "Arrival performance",
+            "expression": "DIVIDE([Delay >15 Flights], [Arrived Flights])",
+            "formatString": "0.00%",
+            "lineageTag": "6340885c-c607-4959-91c4-64f684d65104"
+          },
+          {
+            "name": "Severe Delay %",
+            "displayFolder": "Arrival performance",
+            "expression": "DIVIDE([Severe Delay Flights], [Arrived Flights])",
+            "formatString": "0.00%",
+            "lineageTag": "08a510fd-233c-40d5-ae10-ba3301a69a64"
+          },
+          {
+            "name": "Cancellation %",
+            "displayFolder": "Operations",
+            "expression": "DIVIDE([Cancelled Flights], [Flights])",
+            "formatString": "0.00%",
+            "lineageTag": "e53710a9-1d21-4884-a877-806dfc2c389a"
+          },
+          {
+            "name": "Diversion %",
+            "displayFolder": "Operations",
+            "expression": "DIVIDE([Diverted Flights], [Flights])",
+            "formatString": "0.00%",
+            "lineageTag": "11a7c0a3-6bc1-48dc-8b20-ae6389bc54f4"
+          },
+          {
+            "name": "Arrival Delay Minutes",
+            "displayFolder": "Arrival performance",
+            "expression": [
+              "COALESCE(CALCULATE(",
+              "    SUM(fact_flight[arrival_delay_minutes]),",
+              "    KEEPFILTERS(fact_flight[cancelled] = 0),",
+              "    KEEPFILTERS(fact_flight[diverted] = 0),",
+              "    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes]))",
+              "), 0)"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "56727b4f-c4cd-4cb7-90cb-b3a00bb5c5c9"
+          },
+          {
+            "name": "Average Arrival Delay Minutes",
+            "displayFolder": "Arrival performance",
+            "expression": "DIVIDE([Arrival Delay Minutes], [Arrived Flights])",
+            "formatString": "0.00",
+            "lineageTag": "fcd68dde-07f5-4e67-9e2e-8cf65b27e807"
+          },
+          {
+            "name": "Median Arrival Delay Minutes",
+            "displayFolder": "Arrival performance",
+            "expression": [
+              "CALCULATE(",
+              "    MEDIAN(fact_flight[arrival_delay_minutes]),",
+              "    KEEPFILTERS(fact_flight[cancelled] = 0),",
+              "    KEEPFILTERS(fact_flight[diverted] = 0),",
+              "    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes]))",
+              ")"
+            ],
+            "formatString": "0.00",
+            "lineageTag": "b73bdbca-c660-4863-899e-8082e4b24f0e"
+          },
+          {
+            "name": "Route Reliability Index",
+            "displayFolder": "Operations",
+            "expression": [
+              "IF(",
+              "    [Flights] > 0 && [Arrived Flights] > 0,",
+              "    MAX(0, 100 - 50 * [Delay >15 %] - 50 * [Cancellation %]),",
+              "    BLANK()",
+              ")"
+            ],
+            "formatString": "0.0",
+            "lineageTag": "605ada9f-580d-455e-8eaa-448373c82d27"
+          },
+          {
+            "name": "Air System Minutes",
+            "displayFolder": "Operations",
+            "expression": "SUM(fact_flight[air_system_delay_minutes])",
+            "formatString": "#,##0",
+            "lineageTag": "6303103a-cb53-4795-b276-187aa9fb20be"
+          },
+          {
+            "name": "Security Minutes",
+            "displayFolder": "Operations",
+            "expression": "SUM(fact_flight[security_delay_minutes])",
+            "formatString": "#,##0",
+            "lineageTag": "6ac9c8e3-1356-4891-9454-ce9d86582fc8"
+          },
+          {
+            "name": "Airline Minutes",
+            "displayFolder": "Operations",
+            "expression": "SUM(fact_flight[airline_delay_minutes])",
+            "formatString": "#,##0",
+            "lineageTag": "a5c17ed2-2acf-4cd5-ba3d-c03d6c4e52d0"
+          },
+          {
+            "name": "Late Aircraft Minutes",
+            "displayFolder": "Operations",
+            "expression": "SUM(fact_flight[late_aircraft_delay_minutes])",
+            "formatString": "#,##0",
+            "lineageTag": "1a9d4b4d-6b8b-4669-9cec-c3b2866e537a"
+          },
+          {
+            "name": "Weather Minutes",
+            "displayFolder": "Operations",
+            "expression": "SUM(fact_flight[weather_delay_minutes])",
+            "formatString": "#,##0",
+            "lineageTag": "7f5ba888-17e2-4e18-890a-15fda1ce4ac3"
+          },
+          {
+            "name": "Recorded Cause Minutes",
+            "displayFolder": "Operations",
+            "expression": [
+              "[Air System Minutes] + [Security Minutes] + [Airline Minutes] +",
+              "[Late Aircraft Minutes] + [Weather Minutes]"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "0a4ed89b-b54c-484d-87b6-65d65ff07317"
+          },
+          {
+            "name": "Cause Minutes",
+            "displayFolder": "Operations",
+            "expression": [
+              "SWITCH(",
+              "    SELECTEDVALUE(DelayCause[Cause]),",
+              "    \"Air system\", [Air System Minutes],",
+              "    \"Security\", [Security Minutes],",
+              "    \"Airline\", [Airline Minutes],",
+              "    \"Late aircraft\", [Late Aircraft Minutes],",
+              "    \"Weather\", [Weather Minutes]",
+              ")"
+            ],
+            "formatString": "#,##0",
+            "lineageTag": "e52a5c0c-4c0f-4b8e-96e3-7991f1a3fced"
+          },
+          {
+            "name": "Cause Share %",
+            "displayFolder": "Operations",
+            "expression": "DIVIDE([Cause Minutes], [Recorded Cause Minutes])",
+            "formatString": "0.00%",
+            "lineageTag": "9afa86db-f6d8-4788-b162-6384cb1978d0"
+          },
+          {
+            "name": "Numeric Airport Rows",
+            "displayFolder": "Report context",
+            "expression": "CALCULATE([Flights], KEEPFILTERS(fact_flight[Airport code type] = \"Numeric ID\"))",
+            "formatString": "#,##0",
+            "lineageTag": "8c2c92ef-cd71-40b6-8428-eb735aa1a126"
+          },
+          {
+            "name": "Numeric Airport %",
+            "displayFolder": "Report context",
+            "expression": "DIVIDE([Numeric Airport Rows], [Flights])",
+            "formatString": "0.00%",
+            "lineageTag": "862c95cb-5faa-49dd-aa0c-ba1436c65901"
+          },
+          {
+            "name": "Late Aircraft Share %",
+            "displayFolder": "Report context",
+            "expression": "DIVIDE([Late Aircraft Minutes], [Recorded Cause Minutes])",
+            "formatString": "0.00%",
+            "lineageTag": "d708c92a-fe23-4137-8e68-beb7ce395b21"
+          },
+          {
+            "name": "Route Late Rank",
+            "displayFolder": "Report context",
+            "expression": "IF([Flights] >= 1000 && [Arrived Flights] > 0, RANKX(FILTER(ALLSELECTED(fact_flight[route_code]), CALCULATE([Flights]) >= 1000 && CALCULATE([Arrived Flights]) > 0), [Delay >15 %],, DESC, Dense))",
+            "formatString": "0",
+            "lineageTag": "5e3cfe77-280f-4b8d-a184-62c6f00d7532"
+          },
+          {
+            "name": "Origin Severe Rank",
+            "displayFolder": "Report context",
+            "expression": "IF([Flights] >= 1000 && [Arrived Flights] > 0, RANKX(FILTER(ALLSELECTED(fact_flight[origin_airport_code]), CALCULATE([Flights]) >= 1000 && CALCULATE([Arrived Flights]) > 0), [Severe Delay %],, DESC, Dense))",
+            "formatString": "0",
+            "lineageTag": "2772c3c0-e99c-416c-ba9a-ed84084b9e8a"
+          },
+          {
+            "name": "Route Context",
+            "displayFolder": "Report context",
+            "expression": "SELECTEDVALUE(fact_flight[route_code], \"All source-code routes\")",
+            "lineageTag": "bf97ec37-2c49-44b7-bce1-7fd09d377428"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_flight",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Parquet.Document(File.Contents(ProjectFolder & \"/notebooks/data/processed/fact_flight.parquet\")),",
+                "    Selected = Table.RemoveColumns(Source, {\"flight_key\", \"candidate_operational_key\"}),",
+                "    Typed = Table.TransformColumnTypes(Selected, {{\"flight_date\", type date}, {\"source_row_number\", Int64.Type}, {\"cancelled\", Int64.Type}, {\"diverted\", Int64.Type}, {\"departure_hour\", Int64.Type}, {\"peak_period\", Int64.Type}}),",
+                "    Coverage = Table.AddColumn(Typed, \"Airport code type\", each if Text.Length([origin_airport_code]) = 3 then \"IATA\" else \"Numeric ID\", type text),",
+                "    Period = Table.AddColumn(Coverage, \"Departure period\", each if [peak_period] = 1 then \"Peak (06-09 / 16-19)\" else \"Other scheduled hours\", type text)",
+                "in",
+                "    Period"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Airline",
+        "columns": [
+          {
+            "name": "airline_code",
+            "dataType": "string",
+            "isKey": true,
+            "lineageTag": "4620e9ae-bf3f-4f24-a0a3-b6e69eeec348",
+            "sourceColumn": "airline_code",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "airline_name",
+            "dataType": "string",
+            "lineageTag": "b2699636-b078-4d39-ad1c-e6cdad328358",
+            "sourceColumn": "airline_name",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "115520ed-87bf-4cb5-9322-080f7eb9c415",
+        "partitions": [
+          {
+            "name": "Airline",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let Source = Csv.Document(File.Contents(ProjectFolder & \"/notebooks/data/raw/airlines.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                "Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                "Renamed = Table.RenameColumns(Headers,{{\"IATA_CODE\",\"airline_code\"},{\"AIRLINE\",\"airline_name\"}})",
+                "in Table.TransformColumnTypes(Renamed,{{\"airline_code\",type text},{\"airline_name\",type text}})"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Calendar",
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd",
+            "isKey": true,
+            "lineageTag": "1ac03631-eba9-48f6-a68f-d7b4d70b4603",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "lineageTag": "1e30419f-a58e-4632-8cd0-1cac56906137",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthNumber",
+            "dataType": "int64",
+            "lineageTag": "73dacc4d-f66c-4a19-bf90-8b2b836d5255",
+            "sourceColumn": "MonthNumber",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "YearMonth",
+            "dataType": "string",
+            "lineageTag": "4a5745b0-d9bf-4005-8ba1-de46f9101e7e",
+            "sortByColumn": "MonthNumber",
+            "sourceColumn": "YearMonth",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "cf295281-5f46-45e7-8b21-bd339795b920",
+        "partitions": [
+          {
+            "name": "Calendar",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let Dates = Table.FromList(List.Dates(#date(2015,1,1),365,#duration(1,0,0,0)),Splitter.SplitByNothing(),{\"Date\"}),",
+                "Typed = Table.TransformColumnTypes(Dates,{{\"Date\",type date}}),",
+                "Year = Table.AddColumn(Typed,\"Year\",each Date.Year([Date]),Int64.Type),",
+                "Month = Table.AddColumn(Year,\"MonthNumber\",each Date.Month([Date]),Int64.Type),",
+                "Label = Table.AddColumn(Month,\"YearMonth\",each Date.ToText([Date],\"yyyy-MM\"),type text)",
+                "in Label"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DelayCause",
+        "columns": [
+          {
+            "name": "Cause",
+            "dataType": "string",
+            "lineageTag": "b7ef8919-7cf7-48ac-8105-b44aac16664c",
+            "sourceColumn": "Cause",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "fd2c2a74-f2de-4d01-b508-bafeef76499c",
+        "partitions": [
+          {
+            "name": "DelayCause",
+            "mode": "import",
+            "source": {
+              "expression": "#table(type table [Cause=text],{{\"Air system\"},{\"Security\"},{\"Airline\"},{\"Late aircraft\"},{\"Weather\"}})",
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

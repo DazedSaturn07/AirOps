@@ -1,0 +1,21 @@
+source_field,target_field,transformation,quality_rule
+YEAR MONTH DAY,flight_date,pandas to_datetime with errors raised,reject invalid dates before saving fact
+AIRLINE,airline_code,trim string,required source column
+FLIGHT_NUMBER,flight_number,trim string,required source column
+ORIGIN_AIRPORT DESTINATION_AIRPORT,route_code,origin plus hyphen plus destination,required source columns
+SCHEDULED_DEPARTURE,scheduled_departure_hhmm,string zero-pad to four digits,retain source-local HHMM semantics
+ARRIVAL_DELAY,arrival_delay_minutes,numeric conversion with errors raised,exclude from arrival KPIs when null/cancelled/diverted
+CANCELLED,cancelled,validate 0 or 1 then integer conversion,reject missing or invalid flags
+DIVERTED,diverted,validate 0 or 1 then integer conversion,reject missing or invalid flags
+TAIL_NUMBER,tail_number,trim text,preserve missing values
+DEPARTURE_DELAY,departure_delay_minutes,numeric conversion,preserve negative and missing values
+source position,source_row_number,one-based row number excluding header,unique within exact source order
+date carrier flight airports scheduled time tail,candidate_operational_key,concatenate lineage fields,retain repeated candidates
+candidate and source row,flight_key,append source row tie breaker,unique fact primary key
+ORIGIN_AIRPORT,origin_airport_code,trim text,preserve numeric identifiers as text
+DESTINATION_AIRPORT,destination_airport_code,trim text,preserve numeric identifiers as text
+CANCELLATION_REASON,cancellation_reason_code,trim text,preserve missing values
+scheduled departure,departure_hour,integer HHMM divided by 100,validate hour 0 to 23 and minutes 0 to 59
+departure hour,peak_period,1 for 06-09 or 16-19 inclusive else 0,source-local scheduled hour
+eligible arrival delay,delay_bucket,<=15 or 16-60 or >60 label,null when cancelled diverted or missing arrival
+AIR_SYSTEM_DELAY through WEATHER_DELAY,*_delay_minutes,numeric conversion with nulls zero for additive totals,attributed minutes are not causal proof

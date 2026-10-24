@@ -1,0 +1,121 @@
+// Create each expression separately with Modeling > New measure.
+// The project uses a custom <=15-minute on-time boundary.
+// KEEPFILTERS preserves page/slicer filters, including cancellation-only checks.
+
+Flights = COALESCE(COUNTROWS(fact_flight), 0)
+
+Cancelled Flights = CALCULATE(
+    [Flights], KEEPFILTERS(fact_flight[cancelled] = 1)
+)
+
+Diverted Flights = CALCULATE(
+    [Flights], KEEPFILTERS(fact_flight[diverted] = 1)
+)
+
+Arrived Flights = CALCULATE(
+    [Flights],
+    KEEPFILTERS(fact_flight[cancelled] = 0),
+    KEEPFILTERS(fact_flight[diverted] = 0),
+    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes]))
+)
+
+On-Time Arrivals = CALCULATE(
+    [Flights],
+    KEEPFILTERS(fact_flight[cancelled] = 0),
+    KEEPFILTERS(fact_flight[diverted] = 0),
+    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes])),
+    KEEPFILTERS(fact_flight[arrival_delay_minutes] <= 15)
+)
+
+Delay >15 Flights = CALCULATE(
+    [Flights],
+    KEEPFILTERS(fact_flight[cancelled] = 0),
+    KEEPFILTERS(fact_flight[diverted] = 0),
+    KEEPFILTERS(fact_flight[arrival_delay_minutes] > 15)
+)
+
+Severe Delay Flights = CALCULATE(
+    [Flights],
+    KEEPFILTERS(fact_flight[cancelled] = 0),
+    KEEPFILTERS(fact_flight[diverted] = 0),
+    KEEPFILTERS(fact_flight[arrival_delay_minutes] > 60)
+)
+
+On-Time Arrival % = DIVIDE([On-Time Arrivals], [Arrived Flights])
+
+Delay >15 % = DIVIDE([Delay >15 Flights], [Arrived Flights])
+
+Severe Delay % = DIVIDE([Severe Delay Flights], [Arrived Flights])
+
+Cancellation % = DIVIDE([Cancelled Flights], [Flights])
+
+Diversion % = DIVIDE([Diverted Flights], [Flights])
+
+Arrival Delay Minutes = COALESCE(CALCULATE(
+    SUM(fact_flight[arrival_delay_minutes]),
+    KEEPFILTERS(fact_flight[cancelled] = 0),
+    KEEPFILTERS(fact_flight[diverted] = 0),
+    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes]))
+), 0)
+
+Average Arrival Delay Minutes = DIVIDE([Arrival Delay Minutes], [Arrived Flights])
+
+Median Arrival Delay Minutes = CALCULATE(
+    MEDIAN(fact_flight[arrival_delay_minutes]),
+    KEEPFILTERS(fact_flight[cancelled] = 0),
+    KEEPFILTERS(fact_flight[diverted] = 0),
+    KEEPFILTERS(NOT ISBLANK(fact_flight[arrival_delay_minutes]))
+)
+
+Route Reliability Index = IF(
+    [Flights] > 0 && [Arrived Flights] > 0,
+    MAX(0, 100 - 50 * [Delay >15 %] - 50 * [Cancellation %]),
+    BLANK()
+)
+
+Air System Minutes = SUM(fact_flight[air_system_delay_minutes])
+
+Security Minutes = SUM(fact_flight[security_delay_minutes])
+
+Airline Minutes = SUM(fact_flight[airline_delay_minutes])
+
+Late Aircraft Minutes = SUM(fact_flight[late_aircraft_delay_minutes])
+
+Weather Minutes = SUM(fact_flight[weather_delay_minutes])
+
+Recorded Cause Minutes =
+[Air System Minutes] + [Security Minutes] + [Airline Minutes] +
+[Late Aircraft Minutes] + [Weather Minutes]
+
+// DelayCause is a disconnected five-row table, defined in the Power BI guide.
+Cause Minutes = SWITCH(
+    SELECTEDVALUE(DelayCause[Cause]),
+    "Air system", [Air System Minutes],
+    "Security", [Security Minutes],
+    "Airline", [Airline Minutes],
+    "Late aircraft", [Late Aircraft Minutes],
+    "Weather", [Weather Minutes]
+)
+
+Cause Share % = DIVIDE([Cause Minutes], [Recorded Cause Minutes])
+
+// Report context and minimum-volume rankings.
+Numeric Airport Rows = CALCULATE([Flights], KEEPFILTERS(fact_flight[Airport code type] = "Numeric ID"))
+
+Numeric Airport % = DIVIDE([Numeric Airport Rows], [Flights])
+
+Late Aircraft Share % = DIVIDE([Late Aircraft Minutes], [Recorded Cause Minutes])
+
+Route Late Rank =
+IF([Flights] >= 1000 && [Arrived Flights] > 0,
+    RANKX(FILTER(ALLSELECTED(fact_flight[route_code]),
+        CALCULATE([Flights]) >= 1000 && CALCULATE([Arrived Flights]) > 0),
+        [Delay >15 %],, DESC, Dense))
+
+Origin Severe Rank =
+IF([Flights] >= 1000 && [Arrived Flights] > 0,
+    RANKX(FILTER(ALLSELECTED(fact_flight[origin_airport_code]),
+        CALCULATE([Flights]) >= 1000 && CALCULATE([Arrived Flights]) > 0),
+        [Severe Delay %],, DESC, Dense))
+
+Route Context = SELECTEDVALUE(fact_flight[route_code], "All source-code routes")

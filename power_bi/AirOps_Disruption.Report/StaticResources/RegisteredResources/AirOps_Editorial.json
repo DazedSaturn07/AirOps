@@ -1,0 +1,97 @@
+{
+  "name": "AirOps_Editorial.json",
+  "dataColors": [
+    "#167C80",
+    "#C47643",
+    "#6E90A8",
+    "#899A83",
+    "#B2BDC3"
+  ],
+  "background": "#F4F3EF",
+  "foreground": "#21394A",
+  "tableAccent": "#167C80",
+  "textClasses": {
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#647580"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#21394A"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 30,
+      "color": "#142C40"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontSize": 12,
+            "fontColor": {
+              "solid": {
+                "color": "#21394A"
+              }
+            }
+          }
+        ],
+        "padding": [
+          {
+            "top": 12,
+            "bottom": 12,
+            "left": 16,
+            "right": 16
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [
+          {
+            "autoSizeColumnWidth": true,
+            "columnAdjustment": "growToFit",
+            "fontSize": 10
+          }
+        ],
+        "values": [
+          {
+            "fontSize": 10
+          }
+        ],
+        "grid": [
+          {
+            "rowPadding": 7
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "AirOps_Disruption"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7f05cae0-241a-4d52-a82c-f099e79f6191"
+  }
+}

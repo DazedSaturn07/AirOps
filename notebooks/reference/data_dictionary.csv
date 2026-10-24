@@ -1,0 +1,25 @@
+field,curated_type,source_field,meaning,grain_or_rule
+source_row_number,integer,source position,One-based row number excluding CSV header,unique within the exact supplied file order
+flight_key,string,derived,Deterministic fact primary key,candidate operational key plus immutable source-row tie breaker
+candidate_operational_key,string,derived,Operational lineage candidate,date airline flight origin destination scheduled departure tail
+flight_date,date,YEAR MONTH DAY,Service date,local source date; no timezone conversion
+airline_code,string,AIRLINE,Carrier IATA code,scheduled flight
+flight_number,string,FLIGHT_NUMBER,Flight number as supplied,not unique across dates or airlines
+tail_number,string,TAIL_NUMBER,Aircraft tail identifier,missing values retained
+origin_airport_code,string,ORIGIN_AIRPORT,Origin code or numeric source identifier,retain text; do not guess unresolved lookup matches
+destination_airport_code,string,DESTINATION_AIRPORT,Destination code or numeric source identifier,retain text; do not guess unresolved lookup matches
+scheduled_departure_hhmm,string,SCHEDULED_DEPARTURE,Four-character scheduled departure time,source-local HHMM; leading zeros retained
+route_code,string,ORIGIN_AIRPORT DESTINATION_AIRPORT,Origin-destination route,scheduled flight
+arrival_delay_minutes,decimal,ARRIVAL_DELAY,Recorded arrival delay minutes,excluded from arrival denominators when cancelled/diverted/null
+departure_delay_minutes,decimal,DEPARTURE_DELAY,Recorded departure delay minutes,negative values mean early departure; missing values retained
+cancelled,integer 0/1,CANCELLED,Cancelled source flag,validate before conversion
+diverted,integer 0/1,DIVERTED,Diverted source flag,validate before conversion
+cancellation_reason_code,string,CANCELLATION_REASON,Recorded cancellation category,missing values retained
+air_system_delay_minutes,decimal,AIR_SYSTEM_DELAY,Recorded air-system-attributed minutes,source null becomes zero for additive cause sums
+security_delay_minutes,decimal,SECURITY_DELAY,Recorded security-attributed minutes,source null becomes zero for additive cause sums
+airline_delay_minutes,decimal,AIRLINE_DELAY,Recorded airline-attributed minutes,source null becomes zero for additive cause sums
+late_aircraft_delay_minutes,decimal,LATE_AIRCRAFT_DELAY,Recorded late-aircraft-attributed minutes,source null becomes zero for additive cause sums
+weather_delay_minutes,decimal,WEATHER_DELAY,Recorded weather-attributed minutes,source null becomes zero for additive cause sums
+departure_hour,integer 0-23,SCHEDULED_DEPARTURE,Hour extracted from scheduled HHMM,validate HHMM before conversion; source-local hour
+delay_bucket,string,derived,Governed arrival delay band,not an outcome for cancelled/diverted rows
+peak_period,integer 0/1,derived,Scheduled departure in 06-09 or 16-19 local hour,source-local time

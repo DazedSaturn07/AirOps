@@ -1,0 +1,62 @@
+# Public documentation: keep personal runbooks and section guides local.
+*.[mM][dD]
+*.[mM][dD][xX]
+!/README.md
+!/PROBLEM_STATEMENT.md
+
+# Local credentials, tool settings and machine configuration.
+.env
+.env.*
+!.env.example
+.aws/
+.azure/
+.ssh/
+.agents/
+.codex/
+.idea/
+.vscode/
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+.mylogin.cnf
+credentials.json
+secrets.json
+
+# Python environments, caches and temporary authoring files.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.release/
+**/.build/
+*.log
+*.tmp
+*.bak
+*.inspect.ndjson
+.DS_Store
+Thumbs.db
+~$*
+
+# Source data and regenerated handoffs stay outside the public repository.
+notebooks/data/raw/*
+!notebooks/data/raw/manifest.json
+notebooks/data/processed/
+notebooks/data/exports/
+notebooks/data/quality/
+notebooks/data/recovery/
+
+# Share one reviewed workbook; keep report binaries and local caches private.
+excel/*.xlsx
+!excel/AirOps_Validation.xlsx
+power_bi/*.pbix
+power_bi/*.pbit
+**/.pbi/
+*.abf
+*.dmp
+*.odc
+*.dsn

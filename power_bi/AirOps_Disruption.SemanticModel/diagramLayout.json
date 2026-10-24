@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 618.38305001469371,
+            "y": 3.155302040154254
+          },
+          "nodeIndex": "Airline",
+          "nodeLineageTag": "115520ed-87bf-4cb5-9322-080f7eb9c415",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 9.140412819754431
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "cf295281-5f46-45e7-8b21-bd339795b920",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852.38305001469382,
+            "y": 97.999999999999972
+          },
+          "nodeIndex": "DelayCause",
+          "nodeLineageTag": "fd2c2a74-f2de-4d01-b508-bafeef76499c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20156119318528,
+            "y": -50
+          },
+          "nodeIndex": "fact_flight",
+          "nodeLineageTag": "b8d4743e-63ad-45f0-9082-bfbddaef42db",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
